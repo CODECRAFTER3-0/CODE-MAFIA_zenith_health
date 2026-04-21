@@ -144,3 +144,240 @@ HealthTech/
 │   └── package.json
 │
 └── README.md
+## ⚙️ Complete Installation Guide
+
+Follow these steps to run the project locally.
+
+---
+
+# 📌 Prerequisites
+
+Make sure these are installed on your system:
+
+* **Node.js** (v18 or higher recommended)
+* **npm** (comes with Node.js)
+* **MongoDB Community Server** OR MongoDB Atlas connection string
+* **Git**
+
+Check versions:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+# 1️⃣ Clone Repository
+
+```bash
+git clone <your-repository-url>
+cd HealthTech
+```
+
+---
+
+# 2️⃣ Backend Setup
+
+Move into backend folder:
+
+```bash
+cd Backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create `.env` file inside Backend folder:
+
+```env
+PORT=5000
+NODE_ENV=development
+MONGO_URI=mongodb://localhost:27017/healthtech
+JWT_SECRET=your_super_secret_key
+GEMINI_API_KEY=your_gemini_api_key
+CLIENT_ORIGIN=http://localhost:5173
+```
+
+Run backend server:
+
+```bash
+npm run dev
+```
+
+Backend will run on:
+
+```text
+http://localhost:5000
+```
+
+---
+
+# 3️⃣ Frontend Setup
+
+Open new terminal:
+
+```bash
+cd HealthTech/Frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run frontend:
+
+```bash
+npm run dev
+```
+
+Frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# 4️⃣ Start MongoDB
+
+If using local MongoDB:
+
+```bash
+mongod
+```
+
+If using MongoDB Atlas:
+
+Use Atlas connection string in `.env`
+
+Example:
+
+```env
+MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/healthtech
+```
+
+---
+
+# 5️⃣ Open Application
+
+Visit:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# 🔐 Demo Login
+
+```text
+Email: demo@healthtech.com
+Password: 123456
+```
+
+---
+
+# 🛠 Common Commands
+
+## Backend
+
+```bash
+npm run dev       # Start backend with nodemon
+npm start         # Production mode
+```
+
+## Frontend
+
+```bash
+npm run dev       # Start Vite server
+npm run build     # Production build
+npm run preview   # Preview build
+```
+
+---
+
+# 🚨 Troubleshooting
+
+## Port Already In Use
+
+Change backend port in `.env`
+
+```env
+PORT=5001
+```
+
+## MongoDB Connection Error
+
+* Ensure MongoDB service is running
+* Check URI in `.env`
+
+## CORS Error
+
+Ensure:
+
+```env
+CLIENT_ORIGIN=http://localhost:5173
+```
+
+## Node Modules Error
+
+Delete and reinstall:
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+---
+
+# 📦 Production Build
+
+Frontend:
+
+```bash
+cd Frontend
+npm run build
+```
+
+Backend:
+
+Deploy Node.js server normally.
+
+---
+
+# ✅ Final Setup Summary
+
+Terminal 1:
+
+```bash
+cd Backend
+npm run dev
+```
+
+Terminal 2:
+
+```bash
+cd Frontend
+npm run dev
+```
+
+MongoDB Running.
+
+Open:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# 🎉 Ready to Use
+
+Your AI HealthTech project is now running successfully.
+
